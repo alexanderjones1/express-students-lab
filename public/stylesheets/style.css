@@ -16,6 +16,8 @@ a {
 	
 .delete-form button {
   color: red;
+  border-radius: 50%;
+  background-color: rgb(162, 86, 86);
 }
 	
 li {
