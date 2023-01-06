@@ -4,7 +4,9 @@ function index(req, res) {
     Student.find({})
     .then(students => {
         res.render('students/index', {
-            students: students
+            students: students,
+            time: req.time,
+            date: req.date,
         })
     })
     .catch(error => {
@@ -42,9 +44,23 @@ function show(req, res) {
     })
 }
 
+
+
+function deleteStudent(req, res) {
+    Student.findByIdAndDelete(req.params.id)
+    .then(student => {
+        res.redirect('/students')
+    })
+    .catch(error => {
+        console.log(error);
+        res.redirect('/students')
+    })
+}
+
 export {
     index,
     newStudent as new,
     create,
     show,
+    deleteStudent as delete,
 }

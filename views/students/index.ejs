@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <h1>Students List</h1>
+    <h1>Students List as of <%= date %> at <%= time %></h1>
     <ul>
         <% students.forEach(student => { %>
             <li>
-                <form action="/students/<% student._id %>?_method=DELETE"
+                <form 
+                action="/students/<%= student._id %>?_method=DELETE"
                 class="delete-form"
                 method="POST"
                 >
