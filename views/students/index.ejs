@@ -12,6 +12,12 @@
     <ul>
         <% students.forEach(student => { %>
             <li>
+                <form action="/students/<% student._id %>?_method=DELETE"
+                class="delete-form"
+                method="POST"
+                >
+                <button type="submit">X</button>
+                </form>
                 <a href="/students/<%= student._id %>"><%= student.name %></a>
             </li>
         <% }) %>
