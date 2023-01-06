@@ -11,9 +11,7 @@
     <ul>
         <% students.forEach(student => { %>
             <li>
-                Name: <a href="/students/<%= student._id %>"><%= student.name %></a>
-                Age: <%=  student.age %>
-                Status: <%= student.enrolled ? 'Enrolled' : 'Not enrolled.'  %>
+                <a href="/students/<%= student._id %>"><%= student.name %></a>
             </li>
         <% }) %>
     </ul>
