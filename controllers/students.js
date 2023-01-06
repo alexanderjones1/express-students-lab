@@ -29,8 +29,22 @@ function create(req, res) {
     })
 }
 
+function show(req, res) {
+    Student.findById(req.params.id)
+    .then(student => {
+        res.render('students/show', {
+            student: student
+        })
+    })
+    .catch(error => {
+        console.log(error);
+        res.redirect('/students')
+    })
+}
+
 export {
     index,
     newStudent as new,
     create,
+    show,
 }
