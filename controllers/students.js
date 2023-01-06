@@ -17,7 +17,20 @@ function newStudent(req, res) {
     res.render('students/new')
 }
 
+function create(req, res) {
+    req.body.enrolled === 'on' ? req.body.enrolled = true : req.body.enrolled = false
+    Student.create(req.body)
+    .then(student => {
+        res.redirect('/students')
+    })
+    .catch(error => {
+        console.log(error);
+        res.redirect('/students')
+    })
+}
+
 export {
     index,
     newStudent as new,
+    create,
 }

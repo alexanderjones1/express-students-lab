@@ -11,11 +11,9 @@
     <ul>
         <% students.forEach(student => { %>
             <li>
-                <%= student.name %>
-                is
-                <%=  student.age %>
-                years old and is currently 
-                <%= student.enrolled ? 'enrolled in school.' : 'not enrolled in school.'  %>
+                Name: <%= student.name %>
+                Age: <%=  student.age %>
+                Status: <%= student.enrolled ? 'Enrolled' : 'Not enrolled.'  %>
             </li>
         <% }) %>
     </ul>
