@@ -13,6 +13,11 @@ function index(req, res) {
     })
 }
 
+function newStudent(req, res) {
+    res.render('students/new')
+}
+
 export {
-    index
+    index,
+    newStudent as new,
 }

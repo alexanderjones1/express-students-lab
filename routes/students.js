@@ -1,11 +1,11 @@
 import { Router } from 'express'
+import * as studentsCtrl from '../controllers/students.js'
 
 const router = Router()
 
 /* GET users listing. */
-router.get('/', function(req, res) {
-  res.send('respond with a resource')
-})
+router.get('/', studentsCtrl.index)
+router.get('/new', studentsCtrl.new)
 
 export {
   router
